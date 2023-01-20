@@ -18,7 +18,7 @@ import {
 import { getPacks, getPack } from '../lib/requestApiPacks';
 import { getPrestations } from '../lib/requestApiPrestations';
 import { getFormules } from '../lib/requestApiFormules';
-import { addClient, sendEmail } from '../lib/requestApiClients';
+import { addClient, /*sendEmail*/ } from '../lib/requestApiClients';
 
 import {
   FaPhone, FaEnvelope, FaMapMarkerAlt,
@@ -175,8 +175,8 @@ export default function Contact() {
         details
       }
       const json = await addClient(formData);
-      const jsonSendemail = await sendEmail(formData);
-      if (json && jsonSendemail) {
+      // const jsonSendemail = await sendEmail(formData);
+      if (json /*&& jsonSendemail*/) {
         dispatch(sendEmailSuccess());
         router.push('/');
         notify();

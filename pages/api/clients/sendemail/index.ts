@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import connectMongo from '../../../../database/database';
-import { sendEmail } from '../../../../database/clientsController';
+// import { sendEmail } from '../../../../database/clientsController';
 
 type Data = {
     method?: string
@@ -17,13 +17,13 @@ export default async function handler(
     // type of request
     const { method } = req;
 
-    switch (method) {
-        case 'POST':
-            sendEmail({req, res});
-            break;
-        default:
-            res.setHeader('Allow', ['POST']);
-            res.status(405).end(`Method ${method} Not Allowd`);
-            break;
-    }
+    // switch (method) {
+    //     case 'POST':
+    //         sendEmail({req, res});
+    //         break;
+    //     default:
+    //         res.setHeader('Allow', ['POST']);
+    //         res.status(405).end(`Method ${method} Not Allowd`);
+    //         break;
+    // }
 }

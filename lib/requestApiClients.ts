@@ -54,18 +54,18 @@ export async function deleteClient(clientId: string) {
     return json;
 }
 
-// sendEmail
-export async function sendEmail(formData: Object) {
-    try {
-        const Options = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        }
-        const response = await fetch(`${BASE_URL}/api/clients/sendemail`, Options);
-        const json = await response.json();
-        return json;
-    } catch (error) {
-        return error;
-    }
-}
+// // sendEmail
+// export async function sendEmail(formData: Object) {
+//     try {
+//         const Options = {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify(formData)
+//         }
+//         const response = await fetch(`${BASE_URL}/api/clients/sendemail`, Options);
+//         const json = await response.json();
+//         return json;
+//     } catch (error) {
+//         return error;
+//     }
+// }
