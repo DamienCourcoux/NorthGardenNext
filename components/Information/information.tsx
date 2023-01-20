@@ -12,7 +12,7 @@ type Information = {
 export default function Information() {
     const id = localStorage.getItem('idBanner');
 
-    const { isLoading, isError, data, error } = useQuery<Information[] | any>('information', () => getInformation(id ? id : 1));
+    const { isLoading, isError, data, error } = useQuery<Information[] | any>('information', () => getInformation(id ? id : '1'));
 
     if (isLoading) return <Loader message="L'information charge..." />;
     if (isError) return <div>J&apos;ai eu une erreur {`${error}`}</div>;
