@@ -198,10 +198,10 @@ export default function EditClientAdmin() {
                                 </optgroup>
                             </select>
                         </label>
-                        <label htmlFor="details" className={`${stylesField.label} ${stylesField.fullSize}`}>
+                        {/* <label htmlFor="details" className={`${stylesField.label} ${stylesField.fullSize}`}>
                             Détails
                             <textarea className={stylesField.input} name="details" id="details" rows={5} value={details} onChange={handleTextareaChange}></textarea>
-                        </label>
+                        </label> */}
                         <button className="containerFormFormButton" type="submit">Valider</button>
                     </form>
                 </div>
