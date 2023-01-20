@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://north-garden.vercel.app";
 
 // all clients
 export const getClients = async () => {
