@@ -71,8 +71,6 @@ export default function Home() {
                 transitionTime={2000}
                 showStatus={false}
                 showThumbs={false}
-                renderArrowPrev={(onClickHandler, hasPrev) => hasPrev && (<BiLeftArrowCircle onClick={onClickHandler} title={"Image précedente"} style={{ ...arrowStyles, left: 15 }} className="arrowStyles" />)}
-                renderArrowNext={(onClickHandler, hasNext) => hasNext && (<BiRightArrowCircle onClick={onClickHandler} title={"Image suivante"} style={{ ...arrowStyles, right: 15 }} className="arrowStyles" />)}
             >
                 {
                     sliders.map((slider) => (
