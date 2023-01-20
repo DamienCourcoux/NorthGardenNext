@@ -1,0 +1,87 @@
+.label, .input {
+    width: 100%;
+    margin: .5rem 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #82be20;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+.input {
+    padding: .5rem;
+    border: 1px solid #ced4da;
+    border-radius: .5rem;
+    background: #30303080;
+    color: #f7f7f7;
+}
+
+.inputImage {
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  background: #30303080;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: .5rem 0;
+}
+
+.inputImage .input {
+  border: none;
+  margin: 0;
+  background: none;
+}
+
+.inputImage .preview img {
+  object-fit: cover;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+
+.input option {
+  background: #00000099;
+}
+
+.labelError {
+    color: red;
+    animation: wobble 1s;
+}
+
+@keyframes wobble {
+    from {
+      transform: none;
+    }
+
+    15% {
+      transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+
+    30% {
+      transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+
+    45% {
+      transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+      transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+      transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+      transform: none;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+  .label {width: 100%;}
+}

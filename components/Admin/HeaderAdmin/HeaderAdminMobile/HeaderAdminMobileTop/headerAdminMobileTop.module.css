@@ -1,0 +1,103 @@
+.headerAdminMobileTop {
+    width: 100%;
+    background-color: #212121;
+    background-image:  linear-gradient(135deg, rgba(127, 127, 127, 0.2) 25%, transparent 25%), linear-gradient(225deg, rgba(127, 127, 127, 0.2) 25%, transparent 25%), linear-gradient(45deg, rgba(127, 127, 127, 0.2) 25%, transparent 25%), linear-gradient(315deg, rgba(127, 127, 127, 0.2) 25%, #212121 25%);
+    background-position:  8px 0, 8px 0, 0 0, 0 0;
+    background-size: 16px 16px;
+    background-repeat: repeat;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 0 .5rem;
+}
+
+.profil {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profilAvatar {
+    background-color: #212121;
+    background-image: radial-gradient(circle at center center, rgba(127,127,127,.2) 25%, transparent 25%), repeating-radial-gradient(circle at center center, rgba(127,127,127,.2), rgba(127,127,127,.2), 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
+    padding: 0.2rem;
+    border-radius: 50%;
+    border: 1px solid #f7f7f7;
+    margin-bottom: 0.5rem; 
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.pseudo {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #f7f7f7;
+}
+
+/* Déconnexion */
+.logoutList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logoutListItem {
+    width: 100%;
+    transition: background 1s;
+}
+
+.logoutListItem:hover {
+    background-color: rgba(127, 127, 127, 0.2);
+}
+
+.logoutListItem p {
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    font-weight: bold;
+    transition: all 1s;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #f7f7f7;
+}
+
+.logoutListItem p:hover {
+    color: #c03333;
+    transition: .2s;
+}
+
+.logoutListItem p svg {
+    margin-left: .2rem;
+}
+
+
+@media only screen and (min-width: 769px) {
+    .headerAdminMobileTop {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .profil {gap: .5rem;}
+
+    .profilAvatar {margin-bottom: 0;}
+
+    .avatar {
+        width: 24px;
+        height: 24px;
+    }
+
+    .pseudo {
+        font-size: 1rem;
+    }
+
+    .logoutListItem p {padding: 0;}
+}

@@ -1,0 +1,146 @@
+.headerAdmin {
+    background-color: #212121;
+    background-image:  linear-gradient(135deg, rgba(127, 127, 127, 0.2) 25%, transparent 25%), linear-gradient(225deg, rgba(127, 127, 127, 0.2) 25%, transparent 25%), linear-gradient(45deg, rgba(127, 127, 127, 0.2) 25%, transparent 25%), linear-gradient(315deg, rgba(127, 127, 127, 0.2) 25%, #212121 25%);
+    background-position:  8px 0, 8px 0, 0 0, 0 0;
+    background-size: 16px 16px;
+    background-repeat: repeat;
+    min-width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .5rem 0;
+    border-right: 1px solid #f7f7f7;
+}
+
+.profil {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profilAvatar {
+    background-color: #212121;
+    background-image: radial-gradient(circle at center center, rgba(127,127,127,.2) 25%, transparent 25%), repeating-radial-gradient(circle at center center, rgba(127,127,127,.2), rgba(127,127,127,.2), 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
+    padding: 0.2rem;
+    border-radius: 50%;
+    border: 1px solid #f7f7f7;
+    margin-bottom: 0.5rem; 
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.pseudo {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #f7f7f7;
+}
+
+/* Menu Admin */
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item {
+    width: 100%;
+    white-space: initial;
+}
+
+.item:hover {
+    background-color: rgba(127, 127, 127, 0.2);
+}
+
+.item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+    font-weight: bold;
+    transition: all 1s;
+    font-size: 1.2rem;
+    color: #f7f7f7;
+}
+
+.item a:hover {
+    color: #82be20;
+    transition: .2s;
+}
+
+.item a svg {
+    margin-left: .2rem;
+}
+
+.item .active {
+    text-decoration: none;
+}
+
+.active span {
+    color: #82be20 !important;
+}
+
+.item span {
+    position: relative;
+}
+
+.item span::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #82be20;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.item span:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Déconnexion */
+.logoutList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logoutListItem {
+    width: 100%;
+    transition: background 1s;
+}
+
+.logoutListItem:hover {
+    background-color: rgba(127, 127, 127, 0.2);
+}
+
+.logoutListItem p {
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    font-weight: bold;
+    transition: all 1s;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #f7f7f7;
+}
+
+.logoutListItem p:hover {
+    color: #c03333;
+    transition: .2s;
+}
+
+.logoutListItem p svg {
+    margin-left: .2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .headerAdmin {display: none;}
+}

@@ -1,0 +1,345 @@
+.container {
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.information {
+    background-color: #82be20;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #82be20 10px), repeating-linear-gradient(#8ec43655, #8ec436);
+    color: #fff;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.subtitle {
+    opacity: .7;
+}
+
+.informationTop ul {
+    margin: 2rem 0;
+}
+
+.informationTop li {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.informationTop li a {
+    text-decoration: underline;
+}
+
+.informationTop li a:hover {
+    color: #d4d4d4;
+}
+
+.informationTop li svg {
+    margin-right: .5rem;
+}
+
+.ticket {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: #37510c;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.ticketHeader,
+.ticketBody,
+.ticketFooter {
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(41, 54, 61, 0.25);
+}
+
+.ticketHeader {
+    border-top: .5rem solid #c0de8f;
+    border-radius: 0.375em 0.375em 0 0;
+}
+
+.ticketBody>*+* {
+    margin-top: .5rem;
+    padding-top: .5rem;
+    border-top: 1px solid #e9ebed;
+}
+
+.ticketSection>h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.ticketSection span,
+.lastname {
+    font-weight: bold;
+    color: #82be20;
+}
+
+.ticketSection:first-child p {
+    text-transform: capitalize;
+}
+
+.ticketDivider {
+    position: relative;
+    height: 1rem;
+    background: #fff;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.ticketDivider::after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0;
+    border-bottom: 2px dashed #e9ebed;
+}
+
+.ticketNotch {
+    position: absolute;
+    left: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    overflow: hidden;
+}
+
+.ticketNotch::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    right: 100%;
+    top: -50%;
+    border: 0.5rem solid #fff;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(41, 54, 61, 0.25);
+}
+
+.ticketNotchRight {
+    left: auto;
+    right: -0.5rem;
+}
+
+.ticketNotchRight::after {
+    right: 0;
+}
+
+.ticketHeader,
+.ticketFooter {
+    font-weight: bold;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticketFooter {
+    border-top: none;
+    border-radius: 0 0 0.325rem 0.325rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ticketFooterPrice {
+    color: transparent;
+    font-size: 1.5rem;
+    -webkit-text-stroke: 1px #82be20;
+}
+
+.ticketFooterPrice+span {
+    color: #e97a28;
+    text-shadow: 0px 1px 2px #000;
+    -webkit-text-stroke: 0;
+}
+
+.ticketPriceInfo {
+    color: #e97a28;
+    font-style: italic;
+    font-weight: bold;
+    font-size: .8rem;
+    margin-top: .2rem;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
+.labelMain {
+    display: flex;
+    flex-direction: column;
+    color: #82be20;
+    font-weight: bold;
+    width: calc(50% - 1rem);
+}
+
+.labelMain.cent {
+    width: calc(100% - 1rem);
+    margin: .3rem 0;
+}
+
+.form legend {
+    display: block !important;
+}
+
+.backToPrestations {
+    font-size: .8rem;
+    font-style: italic;
+    color: #3f3f3f;
+    background: #d4d4d4;
+    border-radius: .2rem;
+    padding: .2rem;
+    margin: .2rem 0;
+    display: inline-block;
+}
+
+.inputMain {
+    border: 1px solid #00000070;
+    border-radius: .5rem;
+    padding: .5rem;
+    margin: .5rem 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2) inset;
+}
+
+.form fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    gap: .8rem;
+    margin: .3rem 0;
+    border: none;
+}
+
+.labelRadio {
+    min-width: calc(33% - .5rem);
+    width: min-content;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #82be2080;
+    border-radius: .5rem;
+    padding: .5rem;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.labelRadio:hover,
+.isChecked {
+    background-color: #82be20 !important;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #82be20 10px), repeating-linear-gradient(#8ec43655, #8ec436) !important;
+    color: #f7f7f7;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2) !important;
+}
+
+.labelRadio input {
+    display: none;
+}
+
+.form textarea {
+    font-size: 1rem;
+}
+
+.form textarea::placeholder {
+    font-style: italic;
+}
+
+.form button {
+    all: unset;
+    background-color: #82be20;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #82be20 10px), repeating-linear-gradient(#8ec43655, #8ec436);
+    color: #f7f7f7;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 150ms ease-out;
+}
+
+.form button:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px;
+    transform: scale(0.95);
+}
+
+@media only screen and (max-width: 1085px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .information {
+        margin-right: 0;
+    }
+
+    .form {
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .informationTop li a {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 1.2em;
+        white-space: nowrap;
+    }
+
+    .labelMain,
+    .labelMain.cent {
+        width: 100%;
+    }
+
+    .form fieldset {
+        width: 100%;
+    }
+
+    .labelRadio {
+        width: 100%;
+    }
+
+    .ticket {
+        flex-direction: column;
+    }
+
+    .ticketDetails {
+        border-radius: .5rem .5rem 0 0;
+    }
+
+    .ticketRip {
+        display: none;
+    }
+
+    .ticketPrice {
+        border-radius: 0 0 .5rem .5rem;
+        min-height: 0;
+    }
+
+}

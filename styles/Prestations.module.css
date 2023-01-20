@@ -1,0 +1,150 @@
+.packs {
+    width: 100%;
+    margin: .1rem 0;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 1rem;
+    margin: 0 1rem;
+    background-color: #00000070;
+    cursor: pointer;
+}
+
+.title:hover {
+    color: #82be20;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.prestation {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #82be20;
+    padding: 1rem;
+    margin: 1rem;
+    width: 350px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 75%);
+    position: relative;
+    transition: all 1.5s ease-out;
+}
+
+.prestation:nth-child(3n+3) {
+    background-color: #212121;
+    color: #C2A42E;
+}
+
+.prestationTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: .5rem;
+}
+
+.prestationTitle svg {
+    margin: .5rem;
+}
+
+.prestationTitle svg:nth-child(2) {
+    margin-left: -.5rem;
+    margin-right: .5rem;
+}
+
+.isPremium {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: #000;
+    opacity: .7;
+    margin-top: -.5rem;
+    font-style: italic;
+    font-size: .9rem;
+}
+
+.subtitle:empty {
+    margin: 0;
+}
+
+.prestation:nth-child(3n+3) .subtitle {
+    color: #fff;
+}
+
+.list {
+    display: block;
+    background-color: #d1e9a7;
+    margin: .5rem 0 1rem 0;
+    color: #000;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    cursor: default;
+}
+
+.prestation:nth-child(3n+3) .list {
+    background-color: #fff;
+}
+
+.list li:not(:empty) {
+    border-bottom: 1px solid #2b400b;
+    padding: .5rem 0;
+}
+
+.asterix {
+    color: #e97a28;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: .2rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnMecontacter {
+    color: #82be20;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.prestation:nth-child(3n+3) .btnMecontacter {
+    color: #C2A42E;
+}
+
+.btnMecontacter:hover {
+    text-decoration: underline;
+}
+
+
+.prix {
+    text-decoration: none;
+    font-weight: bold;
+    color: #82be20;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.prestation:nth-child(3n+3) .prix {
+    color: #C2A42E;
+}

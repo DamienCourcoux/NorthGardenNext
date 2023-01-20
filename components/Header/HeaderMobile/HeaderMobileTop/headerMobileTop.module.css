@@ -1,0 +1,105 @@
+.headerMobileTop {
+    width: 100%;
+    background-color: #e6f7e6;
+    background-image: linear-gradient(135deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(225deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(45deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(315deg, rgba(130, 191, 33, 0.2) 25%, #e6f7e6 25%);
+    background-position: 8px 0, 8px 0, 0 0, 0 0;
+    background-size: 16px 16px;
+    background-repeat: repeat;
+    position: fixed;
+    top: 0;
+    padding: 0 .5rem;
+    z-index: 2;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: inline-flex;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.menuBurger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hamburgerIcon {
+    height: 4px;
+    width: 40px;
+    cursor: pointer;
+    border-radius: 60px;
+    background-color: #82be20;
+    transform: translate(0%, 0%) rotate(0deg);
+    transition: all ease 0.5s;
+}
+
+.hamburgerIcon::before,
+.hamburgerIcon::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+    margin: auto;
+    transition: all ease 0.5s;
+}
+
+.hamburgerIcon::before {
+    width: 60%;
+    top: -10px;
+    left: 0;
+    transform-origin: left;
+}
+
+.hamburgerIcon::after {
+    width: 60%;
+    bottom: -10px;
+    right: 0;
+    transform-origin: right;
+}
+
+.toggleBurger {
+    transform: translate(0%, 0%) rotate(135deg);
+}
+
+.toggleBurger::before {
+    width: 50%;
+    top: 0;
+    transform: translateX(100%) rotate(-90deg);
+}
+
+.toggleBurger::after {
+    width: 50%;
+    bottom: 0;
+    transform: translateX(-100%) rotate(-90deg);
+}
+
+.menuDropdown {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+    background-color: #e6f7e6;
+    background-image: linear-gradient(135deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(225deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(45deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(315deg, rgba(130, 191, 33, 0.2) 25%, #e6f7e6 25%);
+    background-position: 8px 0, 8px 0, 0 0, 0 0;
+    background-size: 16px 16px;
+    background-repeat: repeat;
+}
+
+@media only screen and (min-width: 769px) {
+    .headerMobileTop {display: none;}
+}

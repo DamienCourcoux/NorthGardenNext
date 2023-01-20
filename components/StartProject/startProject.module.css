@@ -1,0 +1,36 @@
+.startProject {
+    background: #2B400B;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    margin: 100px 0;
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.paragraph {
+    padding: 25px;
+}
+
+.commencerUnProjet{
+    text-decoration: none;
+    color: #fff;
+    background-color: #82be20;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #82be20 10px), repeating-linear-gradient(#8ec43655, #8ec436);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 150ms ease-out;
+}
+
+.commencerUnProjet:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px;
+    transform: scale(0.95);
+}

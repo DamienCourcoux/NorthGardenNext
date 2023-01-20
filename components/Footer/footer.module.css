@@ -1,0 +1,50 @@
+.copyright {
+    text-align: center;
+    margin: .5rem 0;
+    font-size: .8rem;
+}
+
+.damiencourcoux {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.damiencourcouxLink {
+    -webkit-text-stroke: 1px #36414f;
+    color: transparent;
+    font-weight: bold;
+}
+
+.damiencourcouxLink:hover::before {
+    content: url(../../public/cloud.png);
+    display: block;
+    position: absolute;
+    top: -150px;
+    animation: cloud 5s alternate infinite;
+    z-index: -1;
+}
+
+@keyframes cloud {
+    from { transform: scale(.1) translateX(-500px); }
+    to   { transform: scale(.13) translateX(-700px); }
+}
+
+.damiencourcouxLink:hover::after {
+    content: url(../../public/cloud2.png);
+    display: block;
+    position: absolute;
+    top: -100px;
+    animation: cloud2 5s alternate infinite;
+}
+
+@keyframes cloud2 {
+    from { transform: scale(.1) translateX(200px); }
+    to   { transform: scale(.11) translateX(-200px);}
+}
+
+
+@media only screen and (max-width: 768px) {
+    .damiencourcouxLink:hover::before {left: 250px;}
+    .damiencourcouxLink:hover::after {left: 80px;}
+}

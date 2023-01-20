@@ -1,0 +1,71 @@
+.container {
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
+.contactHead {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.contactTitle {
+    font-size: 2rem;
+}
+
+.contactSubtitle {
+    font-weight: bold;
+    margin-top: .5rem;
+    color: #00000095;
+}
+
+.contactSubtitleLeft,
+.contactSubtitleRight {
+    display: inline-block;
+}
+
+.contactSubtitleLeft {
+    animation: goToTheLeft 5s ease .6s infinite;
+}
+
+@keyframes goToTheLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-.5rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-.5rem);
+    }
+}
+
+.contactSubtitleRight {
+    animation: goToTheRight 5s ease 1s infinite;
+}
+
+@keyframes goToTheRight {
+    0% {
+        opacity: 0;
+        transform: translateX(0rem);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(.5rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(.5rem);
+    }
+}

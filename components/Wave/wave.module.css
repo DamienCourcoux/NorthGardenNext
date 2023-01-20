@@ -1,0 +1,26 @@
+.wave {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.png {
+    width: 100%;
+    height: 100%;
+}
+
+.petitBonhomme, .petitBonhomme2 {
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+}
+
+.petitBonhomme {
+    left: 50px;
+    width: 30%;
+}
+
+.petitBonhomme2 {
+    right: 40px;
+    width: 50%;
+}

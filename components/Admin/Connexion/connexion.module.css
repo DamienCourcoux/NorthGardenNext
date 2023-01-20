@@ -1,0 +1,73 @@
+.connexion {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,233,167,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulaire {
+    background-color: #e6f7e6;
+    background-image:  linear-gradient(135deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(225deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(45deg, rgba(130, 191, 33, 0.2) 25%, transparent 25%), linear-gradient(315deg, rgba(130, 191, 33, 0.2) 25%, #e6f7e6 25%);
+    background-position:  8px 0, 8px 0, 0 0, 0 0;
+    background-size: 16px 16px;
+    background-repeat: repeat;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 1rem 2rem;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.button {
+    background-color: #82be20;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #82be20 10px ), repeating-linear-gradient( #8ec43655, #8ec436 );
+    border: none;
+    border-radius: .5rem;
+    color: #fff;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 150ms ease-out;
+}
+
+.button:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px;
+    transform: scale(0.95);
+}
+
+.errorMessage {
+    color: red;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}

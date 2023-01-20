@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    white-space: break-spaces;
+}
+
+.main {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(209, 233, 167, 1) 100%);
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.qrcode {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+    padding: .5rem;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .qrcode {display: none;}
+}
+
+@media only screen and (min-width: 769px) {
+    .main {margin: 0;}
+}

@@ -1,0 +1,143 @@
+.admin {
+    height: 100%;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    color: #f7f7f7;
+    height: 5%;
+}
+
+.container {
+    display: flex;
+    gap: 1rem;
+    height: 95%;
+}
+
+.headTitle {
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* SECTION SLIDER */
+.slider {
+    background: #30303030;
+    width: 60%;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: inset 5px 5px 5px rgb(0 0 0 / 20%), inset -5px -5px 15px rgb(255 255 255 / 10%), 5px 5px 15px rgb(0 0 0 / 30%), -5px -5px 15px rgb(255 255 255 / 10%);
+}
+
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: auto;
+    margin: .5rem 0;
+}
+
+.image {
+    margin: .5rem;
+    opacity: .5;
+    transition: all .2s linear;
+}
+
+.image:hover {
+    opacity: 1;
+}
+
+.image h3 {
+    color: #ffffff;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .1rem;
+}
+
+.image img {
+    border-radius: .5rem;
+    margin: .1rem 0;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CONTAINER RIGHT */
+.information {
+    background: #30303030;
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: inset 5px 5px 5px rgb(0 0 0 / 20%), inset -5px -5px 15px rgb(255 255 255 / 10%), 5px 5px 15px rgb(0 0 0 / 30%), -5px -5px 15px rgb(255 255 255 / 10%);
+}
+
+.bandeaux {
+    overflow: auto;
+    margin: .5rem 0;
+}
+
+.bandeau {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff30;
+    color: #fff;
+    border-radius: .5rem;
+    margin: .5rem 0;
+    padding: .5rem;
+    opacity: .5;
+    transition: all .2s linear;
+}
+
+.bandeau.active {
+    opacity: 1;
+    font-family: none !important;
+    border: 1px solid #82be20;
+    color: #82be20;
+}
+
+.bandeau:hover{
+    opacity: 1;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.numero {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.active .numero {
+    color: #82be20;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .slider {width: 100%;}
+
+    .info {margin: .5rem 0;}
+
+    .bandeau {flex-direction: column;}
+
+    .information {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
