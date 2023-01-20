@@ -2,14 +2,14 @@ const BASE_URL = "https://north-garden.vercel.app";
 
 // all admins
 export const getAdmins = async () => {
-    const response = await fetch(`${BASE_URL}/api/admins`);
+    const response = await fetch(`/api/admins`);
     const json = await response.json();
     return json;
 }
 
 // single admin
 export const getAdmin = async (adminId: string) => {
-    const response = await fetch(`${BASE_URL}/api/admins/${adminId}`);
+    const response = await fetch(`/api/admins/${adminId}`);
     const json = await response.json();
     if (json) return json;
     return {};
@@ -23,7 +23,7 @@ export async function signUpAdmin(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`${BASE_URL}/api/admins/signup`, Options);
+        const response = await fetch(`/api/admins/signup`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -39,7 +39,7 @@ export async function signInAdmin(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`${BASE_URL}/api/admins/signin`, Options);
+        const response = await fetch(`/api/admins/signin`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -54,7 +54,7 @@ export async function updateAdmin(adminId: string, formData: Object) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     }
-    const response = await fetch(`${BASE_URL}/api/admins/${adminId}`, Options);
+    const response = await fetch(`/api/admins/${adminId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -65,7 +65,7 @@ export async function deleteAdmin(adminId: string) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
-    const response = await fetch(`${BASE_URL}/api/admins/${adminId}`, Options);
+    const response = await fetch(`/api/admins/${adminId}`, Options);
     const json = await response.json();
     return json;
 }

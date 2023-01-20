@@ -2,14 +2,14 @@ const BASE_URL = "https://north-garden.vercel.app";
 
 // all formules
 export const getFormules = async () => {
-    const response = await fetch(`${BASE_URL}/api/formules`);
+    const response = await fetch(`/api/formules`);
     const json = await response.json();
     return json;
 }
 
 // single formule
 export const getFormule = async (formuleId: string) => {
-    const response = await fetch(`${BASE_URL}/api/formules/${formuleId}`);
+    const response = await fetch(`/api/formules/${formuleId}`);
     const json = await response.json();
     if (json) return json;
     return {};
@@ -23,7 +23,7 @@ export async function addFormule(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`${BASE_URL}/api/formules`, Options);
+        const response = await fetch(`/api/formules`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -38,7 +38,7 @@ export async function updateFormule(formuleId: string, formData: Object) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     }
-    const response = await fetch(`${BASE_URL}/api/formules/${formuleId}`, Options);
+    const response = await fetch(`/api/formules/${formuleId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -49,7 +49,7 @@ export async function deleteFormule(formuleId: string) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
-    const response = await fetch(`${BASE_URL}/api/formules/${formuleId}`, Options);
+    const response = await fetch(`/api/formules/${formuleId}`, Options);
     const json = await response.json();
     return json;
 }

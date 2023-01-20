@@ -2,14 +2,14 @@ const BASE_URL = "https://north-garden.vercel.app";
 
 // all packs
 export const getPacks = async () => {
-    const response = await fetch(`${BASE_URL}/api/packs`);
+    const response = await fetch(`/api/packs`);
     const json = await response.json();
     return json;
 }
 
 // single pack
 export const getPack = async (packId: string) => {
-    const response = await fetch(`${BASE_URL}/api/packs/${packId}`);
+    const response = await fetch(`/api/packs/${packId}`);
     const json = await response.json();
     if (json) return json;
     return {};
@@ -23,7 +23,7 @@ export async function addPack(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`${BASE_URL}/api/packs`, Options);
+        const response = await fetch(`/api/packs`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -38,7 +38,7 @@ export async function updatePack(packId: string, formData: Object) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     }
-    const response = await fetch(`${BASE_URL}/api/packs/${packId}`, Options);
+    const response = await fetch(`/api/packs/${packId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -49,7 +49,7 @@ export async function deletePack(packId: string) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
-    const response = await fetch(`${BASE_URL}/api/packs/${packId}`, Options);
+    const response = await fetch(`/api/packs/${packId}`, Options);
     const json = await response.json();
     return json;
 }
