@@ -2,14 +2,14 @@ const BASE_URL = "https://north-garden.vercel.app";
 
 // all informations
 export const getInformations = async () => {
-    const response = await fetch(`/api/informations`);
+    const response = await fetch(`${BASE_URL}/api/informations`);
     const json = await response.json();
     return json;
 }
 
 // single information
 export const getInformation = async (informationId: any) => {
-    const response = await fetch(`/api/informations/${informationId}`);
+    const response = await fetch(`${BASE_URL}/api/informations/${informationId}`);
     const json = await response.json();
     if (json) return json;
     return {};
@@ -23,7 +23,7 @@ export async function addInformation(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`/api/informations`, Options);
+        const response = await fetch(`${BASE_URL}/api/informations`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -38,7 +38,7 @@ export async function updateInformation(informationId: string, formData: Object)
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     }
-    const response = await fetch(`/api/informations/${informationId}`, Options);
+    const response = await fetch(`${BASE_URL}/api/informations/${informationId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -49,7 +49,7 @@ export async function deleteInformation(informationId: string) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
-    const response = await fetch(`/api/informations/${informationId}`, Options);
+    const response = await fetch(`${BASE_URL}/api/informations/${informationId}`, Options);
     const json = await response.json();
     return json;
 }

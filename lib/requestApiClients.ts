@@ -2,14 +2,14 @@ const BASE_URL = "https://north-garden.vercel.app";
 
 // all clients
 export const getClients = async () => {
-    const response = await fetch(`/api/clients`);
+    const response = await fetch(`${BASE_URL}/api/clients`);
     const json = await response.json();
     return json;
 }
 
 // single client
 export const getClient = async (clientId: string) => {
-    const response = await fetch(`/api/clients/${clientId}`);
+    const response = await fetch(`${BASE_URL}/api/clients/${clientId}`);
     const json = await response.json();
     if (json) return json;
     return {};
@@ -23,7 +23,7 @@ export async function addClient(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`/api/clients`, Options);
+        const response = await fetch(`${BASE_URL}/api/clients`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -38,7 +38,7 @@ export async function updateClient(clientId: string, formData: Object) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     }
-    const response = await fetch(`/api/clients/${clientId}`, Options);
+    const response = await fetch(`${BASE_URL}/api/clients/${clientId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -49,7 +49,7 @@ export async function deleteClient(clientId: string) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
-    const response = await fetch(`/api/clients/${clientId}`, Options);
+    const response = await fetch(`${BASE_URL}/api/clients/${clientId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -62,7 +62,7 @@ export async function deleteClient(clientId: string) {
 //             headers: { 'Content-Type': 'application/json' },
 //             body: JSON.stringify(formData)
 //         }
-//         const response = await fetch(`/api/clients/sendemail`, Options);
+//         const response = await fetch(`${BASE_URL}/api/clients/sendemail`, Options);
 //         const json = await response.json();
 //         return json;
 //     } catch (error) {

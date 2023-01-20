@@ -2,14 +2,14 @@ const BASE_URL = "https://north-garden.vercel.app";
 
 // all prestations
 export const getPrestations = async () => {
-    const response = await fetch(`/api/prestations`);
+    const response = await fetch(`${BASE_URL}/api/prestations`);
     const json = await response.json();
     return json;
 }
 
 // single prestation
 export const getPrestation = async (prestationId: string) => {
-    const response = await fetch(`/api/prestations/${prestationId}`);
+    const response = await fetch(`${BASE_URL}/api/prestations/${prestationId}`);
     const json = await response.json();
     if (json) return json;
     return {};
@@ -23,7 +23,7 @@ export async function addPrestation(formData: Object) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`/api/prestations`, Options);
+        const response = await fetch(`${BASE_URL}/api/prestations`, Options);
         const json = await response.json();
         return json;
     } catch (error) {
@@ -38,7 +38,7 @@ export async function updatePrestation(prestationId: string, formData: Object) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     }
-    const response = await fetch(`/api/prestations/${prestationId}`, Options);
+    const response = await fetch(`${BASE_URL}/api/prestations/${prestationId}`, Options);
     const json = await response.json();
     return json;
 }
@@ -49,7 +49,7 @@ export async function deletePrestation(prestationId: string) {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
-    const response = await fetch(`/api/prestations/${prestationId}`, Options);
+    const response = await fetch(`${BASE_URL}/api/prestations/${prestationId}`, Options);
     const json = await response.json();
     return json;
 }
