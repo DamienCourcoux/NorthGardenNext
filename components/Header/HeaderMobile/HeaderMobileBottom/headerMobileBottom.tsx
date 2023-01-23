@@ -34,7 +34,7 @@ export default function HeaderMobileBottom() {
                         </NavLink>
                     </li>
                     <li className={`${styles.item} ${styles.filiere}`}>
-                        <a className={styles.aMobile} href="https://northhelper.netlify.app" target="_blank" rel="noopener noreferrer" title='Filière North Helper'>
+                        <a className={styles.aMobile} href="https://north-helper.vercel.app" target="_blank" rel="noopener noreferrer" title='Filière North Helper'>
                             <FaTools />
                             <span>Filière</span>
                         </a>
