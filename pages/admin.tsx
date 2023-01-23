@@ -20,10 +20,10 @@ type Information = {
 }
 
 export default function Admin() {
-    const [actived, setActived] = useState(0);
+    const [actived, setActived] = useState(1);
 
     const toggle = (index: number, id: string) => {
-        if (actived === index) return setActived(0);
+        if (actived === index) return setActived(1);
         setActived(index);
 
         localStorage.setItem('idBanner', id);
