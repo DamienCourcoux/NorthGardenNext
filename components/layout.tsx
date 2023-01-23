@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import Header from './Header/header';
 import Wave from './Wave/wave';
-// import Information from './Information/information';
+import Information from './Information/information';
 import HeaderMobileTop from './Header/HeaderMobile/HeaderMobileTop/headerMobileTop';
 import HeaderMobileBottom from './Header/HeaderMobile/HeaderMobileBottom/headerMobileBottom';
 import Image from 'next/image';
@@ -45,7 +45,7 @@ export default function Layout({ children }: Props) {
                         <Header />
                         <main className={styles.main}>
                             <HeaderMobileTop />
-                            {/* <Information /> */}
+                            <Information />
                             {children}
                             <Wave />
                             <HeaderMobileBottom />
