@@ -79,13 +79,13 @@
 }
 
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1025px) {
     .headerAdminMobileTop {
         display: none;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .profil {gap: .5rem;}
 
     .profilAvatar {margin-bottom: 0;}

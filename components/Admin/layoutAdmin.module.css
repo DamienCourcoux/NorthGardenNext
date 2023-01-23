@@ -112,6 +112,6 @@
     border-color: #82be20;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1025px) {
     .main {margin: 0;}
 }

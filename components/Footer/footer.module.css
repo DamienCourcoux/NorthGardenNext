@@ -44,7 +44,7 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .damiencourcouxLink:hover::before {left: 250px;}
     .damiencourcouxLink:hover::after {left: 80px;}
 }
