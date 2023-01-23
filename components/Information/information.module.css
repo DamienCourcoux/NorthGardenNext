@@ -4,7 +4,7 @@
     background-color: #82be20;
     background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #82be20 10px), repeating-linear-gradient(#8ec43655, #8ec436);
     position: fixed;
-    top: 50px;
+    top: 0;
     z-index: 1;
 }
 
