@@ -4,7 +4,7 @@ import Header from './Header/header';
 import Wave from './Wave/wave';
 import Information from './Information/information';
 import HeaderMobileTop from './Header/HeaderMobile/HeaderMobileTop/headerMobileTop';
-import HeaderMobileBottom from './Header/HeaderMobile/HeaderMobileBottom/headerMobileBottom';
+// import HeaderMobileBottom from './Header/HeaderMobile/HeaderMobileBottom/headerMobileBottom';
 import Image from 'next/image';
 import Qrcode from '../public/qrcode.png';
 import { useSelector, useDispatch } from 'react-redux';
@@ -48,7 +48,7 @@ export default function Layout({ children }: Props) {
                             <Information />
                             {children}
                             <Wave />
-                            <HeaderMobileBottom />
+                            {/* <HeaderMobileBottom /> */}
                             <Image className={styles.qrcode} src={Qrcode} alt="qrcode du site North Garden" title="Vous devez partir ? Scanez-moi pour me consulter sur votre téléphone !" />
                         </main>
                     </div>

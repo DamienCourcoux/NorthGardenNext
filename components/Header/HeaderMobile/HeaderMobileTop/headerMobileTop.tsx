@@ -12,8 +12,10 @@ import CardBack from '../../../../public/cartefideliteback.png';
 import {
     FaIdCard, FaChevronDown, FaChevronUp,
     FaStamp, FaGift, FaPercentage,
-    FaFacebook, FaTwitter, FaInstagram, FaDiscord
+    FaFacebook, FaTwitter, FaInstagram, FaDiscord,
+    FaHome, FaPaperPlane, FaTools
 } from 'react-icons/fa';
+import { HiClipboardList, HiCamera } from 'react-icons/hi';
 
 export default function HeaderMobileTop() {
     const [toggleBurger, setToggleBurger] = useState(false);
@@ -80,6 +82,15 @@ export default function HeaderMobileTop() {
                                 </li>
                             </ul>
                         </div>
+                        <nav className={stylesHeader.menu}>
+                            <ul className={stylesHeader.menuList}>
+                                <li className={stylesHeader.menuListItem}><NavLink className={stylesHeader.menuListItemA} href="/" title='Accueil'><span className={stylesHeader.headerASpan}>Accueil <FaHome /></span></NavLink></li>
+                                <li className={stylesHeader.menuListItem}><NavLink className={stylesHeader.menuListItemA} href="/prestations" title='Prestations'><span className={stylesHeader.headerASpan}>Prestations <HiClipboardList /></span></NavLink></li>
+                                <li className={stylesHeader.menuListItem}><NavLink className={stylesHeader.menuListItemA} href="/gallery" title='Galerie'><span className={stylesHeader.headerASpan}>Galerie <HiCamera /></span></NavLink></li>
+                                <li className={stylesHeader.menuListItem}><NavLink className={stylesHeader.menuListItemA} href="/contact" title='Me contacter'><span className={stylesHeader.headerASpan}>Me contacter <FaPaperPlane /></span></NavLink></li>
+                                <li className={`${stylesHeader.menuListItem} ${stylesHeader.filiere}`}><a className={`${stylesHeader.menuListItemA} ${stylesHeader.filiereA}`} href="https://northhelper.netlify.app" target="_blank" rel="noopener noreferrer" title='Filière North Helper'><span className={`${stylesHeader.headerASpan} ${stylesHeader.filiereASpan}`}>Filière <FaTools /></span></a></li>
+                            </ul>
+                        </nav>
                         <nav className={stylesHeader.policy}>
                             <ul className={stylesHeader.policyList}>
                                 <li className={stylesHeader.policyListItem}>
