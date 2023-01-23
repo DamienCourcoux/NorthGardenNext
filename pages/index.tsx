@@ -7,6 +7,8 @@ import StartProject from '../components/StartProject/startProject';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
+import { BiLeftArrowCircle, BiRightArrowCircle } from 'react-icons/bi';
+
 // temporaire
 import brouette from '../public/brouette.jpeg';
 import slide5 from '../public/slide5.jpg';
@@ -39,6 +41,8 @@ export default function Home() {
                 transitionTime={2000}
                 showStatus={false}
                 showThumbs={false}
+                renderArrowPrev={(onClickHandler, hasPrev ) => hasPrev && (<BiLeftArrowCircle onClick={onClickHandler} title={"Image précedente"} className="arrowStyles" />)}
+                renderArrowNext={(onClickHandler, hasNext ) => hasNext && (<BiRightArrowCircle onClick={onClickHandler} title={"Image suivante"} className="arrowStyles" />)}
             >
                 {
                     sliders.map((slider) => (

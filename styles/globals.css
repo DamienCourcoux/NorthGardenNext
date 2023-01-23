@@ -81,20 +81,33 @@ ul {
 }
 
 /* CAROUSEL */
-.carousel .control-dots .dot  {
+.carousel .control-dots .dot {
   opacity: 1;
   background: #fff;
 }
 
 .carousel .control-dots .dot.selected {
   background-color: #82be20;
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #82be20 10px ), repeating-linear-gradient( #8ec43655, #8ec436 );
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #82be20 10px), repeating-linear-gradient(#8ec43655, #8ec436);
   width: 10px;
   height: 10px;
 }
 
+.arrowStyles {
+  top: 50px !important;
+  z-index: 1 !important;
+  position: absolute;
+  top: calc(50% - 15px);
+  width: 30;
+  height: 30;
+  cursor: pointer;
+  color: #fff;
+  transition: all .2s linear;
+
+}
+
 .arrowStyles:hover {
-  color: #82be20 !important;
+  color: #82be20;
   transform: scale(1.5);
 }
 
@@ -661,5 +674,7 @@ em {
 }
 
 @media only screen and (max-width: 320px) {
-  .elementsAdminContainer {margin: 1rem 0;}
+  .elementsAdminContainer {
+    margin: 1rem 0;
+  }
 }
