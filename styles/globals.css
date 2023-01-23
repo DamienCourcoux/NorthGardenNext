@@ -103,12 +103,19 @@ ul {
   cursor: pointer;
   color: #fff;
   transition: all .2s linear;
-
 }
 
 .arrowStyles:hover {
   color: #82be20;
   transform: scale(1.5);
+}
+
+.arrowLeft {
+  left: 15px;
+}
+
+.arrowRight {
+  right: 15px;
 }
 
 /* ELEMENT (packs, prestations, formules, clients, tags, images) */
