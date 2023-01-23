@@ -38,9 +38,9 @@ ul {
   list-style: none;
 }
 
-.northgarden {
+/* .northgarden {
   font-family: var(--font-berkshire_swash);
-}
+} */
 
 .reseauxList {
   display: flex;
