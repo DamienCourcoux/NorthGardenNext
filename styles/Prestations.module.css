@@ -52,7 +52,7 @@
     transition: all 1.5s ease-out;
 }
 
-.prestation:nth-child(3n+3) {
+.prestationPremium {
     background-color: #212121;
     color: #C2A42E;
 }
