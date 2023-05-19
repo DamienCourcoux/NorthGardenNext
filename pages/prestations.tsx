@@ -78,7 +78,17 @@ export default function Prestations() {
         </Head>
         {
           packs.map((pack: Pack, index: boolean) => (
-            <div className={styles.packs} key={pack._id}>
+            <div className={
+              pack.name === "Pack Jardin" ? `${styles.packs} ${styles.order1}` : styles.packs ||
+              pack.name === "Pack Tonte" ? `${styles.packs} ${styles.order2}` : styles.packs ||
+              pack.name === "Pack Taille" ? `${styles.packs} ${styles.order3}` : styles.packs ||
+              pack.name === "Pack Désherbage" ? `${styles.packs} ${styles.order4}` : styles.packs ||
+              pack.name === "Pack Massif" ? `${styles.packs} ${styles.order5}` : styles.packs ||
+              pack.name === "Pack Plantation" ? `${styles.packs} ${styles.order6}` : styles.packs ||
+              pack.name === "Pack Jardinière / Bac à fleurs" ? `${styles.packs} ${styles.order7}` : styles.packs ||
+              pack.name === "Pack Sépultures" ? `${styles.packs} ${styles.order8}` : styles.packs ||
+              pack.name === "Formule individuelles" ? `${styles.packs} ${styles.order9}` : styles.packs
+            } key={pack._id}>
               <h2 className={styles.title} onClick={() => toggle(index)}>
                 {pack.name === "Pack Jardin" ? <MdNaturePeople /> : ''}
                 {pack.name === "Pack Tonte" ? <GiGrass /> : ''}
@@ -89,7 +99,7 @@ export default function Prestations() {
                 {pack.name === "Pack Jardinière / Bac à fleurs" ? <GiFlowerPot /> : ''}
                 {pack.name === "Pack Sépultures" ? <GiGraveFlowers /> : ''}
                 {pack.name === "Formule individuelles" ? <FaLayerGroup /> : ''}
-                {pack.name + index} {clicked === index ? <FaChevronUp /> : <FaChevronDown />}
+                {pack.name} {clicked === index ? <FaChevronUp /> : <FaChevronDown />}
               </h2>
               {
                 clicked === index ? (

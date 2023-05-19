@@ -9,6 +9,7 @@
     margin: 100px 0;
     padding: 2rem;
     text-align: center;
+    order: 10;
 }
 
 .title {
