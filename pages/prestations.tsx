@@ -89,7 +89,7 @@ export default function Prestations() {
                 {pack.name === "Pack Jardinière / Bac à fleurs" ? <GiFlowerPot /> : ''}
                 {pack.name === "Pack Sépultures" ? <GiGraveFlowers /> : ''}
                 {pack.name === "Formule individuelles" ? <FaLayerGroup /> : ''}
-                {pack.name} {clicked === index ? <FaChevronUp /> : <FaChevronDown />}
+                {pack.name + index} {clicked === index ? <FaChevronUp /> : <FaChevronDown />}
               </h2>
               {
                 clicked === index ? (
