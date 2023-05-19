@@ -107,7 +107,11 @@ export default function Prestations() {
                     {
                       prestations.map((prestation: Prestation) => (
                         pack.prestations.includes(prestation._id) ? (
-                          <div className={styles.prestation} key={prestation._id}>
+                          <div className={
+                            prestation.name.includes('petit') ? `${styles.prestation} ${styles.order1}` : styles.prestation &&
+                            prestation.name.includes('grand') ? `${styles.prestation} ${styles.order2}` : styles.prestation &&
+                            prestation.name.includes('premium') ? `${styles.prestation} ${styles.order3}` : styles.prestation
+                          } key={prestation._id}>
                             <h3 className={styles.prestationTitle}>
                               {prestation.name}
                             </h3>
