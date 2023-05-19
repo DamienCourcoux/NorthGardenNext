@@ -26,7 +26,7 @@ export default function Admin() {
         if (actived === index) return setActived(0);
         setActived(index);
 
-        localStorage.setItem('idBanner', id ? id : '63c83ca41def0730308448cb');
+        localStorage.setItem('idBanner', id);
     }
 
     const { isLoading: isLoadingInformations, isError: isErrorInformations, data: informations, error: errorInformations } = useQuery<Information[] | any>('informations', getInformations);
