@@ -94,7 +94,7 @@
     margin: 0;
 }
 
-.prestation:nth-child(3n+3) .subtitle {
+.prestationPremium .subtitle {
     color: #fff;
 }
 
@@ -108,7 +108,7 @@
     cursor: default;
 }
 
-.prestation:nth-child(3n+3) .list {
+.prestationPremium .list {
     background-color: #fff;
 }
 
@@ -136,7 +136,7 @@
     white-space: nowrap;
 }
 
-.prestation:nth-child(3n+3) .btnMecontacter {
+.prestationPremium .btnMecontacter {
     color: #C2A42E;
 }
 
@@ -155,6 +155,6 @@
     align-items: flex-end;
 }
 
-.prestation:nth-child(3n+3) .prix {
+.prestationPremium .prix {
     color: #C2A42E;
 }
