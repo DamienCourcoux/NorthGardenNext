@@ -4,20 +4,21 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Layout from '../components/layout';
 import LayoutPage from '../components/layoutPage';
-import Loader from '../components/Loader/loader';
-import { useQuery } from 'react-query';
+// import Loader from '../components/Loader/loader';
+// import { useQuery } from 'react-query';
 
-import { getTags } from '../lib/requestApiTags';
+// import { getTags } from '../lib/requestApiTags';
+import { tags } from '../lib/seed';
 
 import { MdNaturePeople, MdLocalFlorist } from 'react-icons/md';
 import { GiGrass, GiShears, GiGloves, GiFragrance, GiFlowerPot, GiGraveFlowers, GiSpinningBlades, GiLeafSwirl, GiWoodPile, GiWateringCan, GiPlantWatering } from 'react-icons/gi';
 import { FaSeedling, FaLayerGroup, FaChevronDown, FaChevronUp, FaWind, FaSnowplow, FaRegSnowflake } from 'react-icons/fa';
 import { VscTrash } from 'react-icons/vsc';
 
-type Tags = {
-  _id: string,
-  name: string,
-}
+// type Tags = {
+//   _id: string,
+//   name: string,
+// }
 
 // temporaire
 import slide1 from '../public/slide1.jpeg';
@@ -34,15 +35,15 @@ import slide11 from '../public/slide11.jpeg';
 import slide12 from '../public/slide12.jpg';
 
 export default function Gallery() {
-  const [clicked, setClicked] = useState(false);
-  const { isLoading, isError, data, error } = useQuery<Tags[] | any>('tags', getTags);
+  const [clicked, setClicked] = useState(-1);
+  // const { isLoading, isError, data, error } = useQuery<Tags[] | any>('tags', getTags);
 
-  if (isLoading) return <Loader message='Les tags chargent...' />;
-  if (isError) return <div>J&apos;ai eu une erreur {`${error}`}</div>;
+  // if (isLoading) return <Loader message='Les tags chargent...' />;
+  // if (isError) return <div>J&apos;ai eu une erreur {`${error}`}</div>;
 
-  const toggle = (index: boolean | ((prevState: boolean) => boolean)) => {
+  const toggle = (index: number) => {
     if (clicked === index) {
-      return setClicked(false);
+      return setClicked(-1);
     }
     setClicked(index);
   }
@@ -54,9 +55,9 @@ export default function Gallery() {
           <title>North Garden | Ma Galerie</title>
         </Head>
         {
-          data.map((tag: Tags, index: boolean) => (
+          tags.map((tag, index) => (
             tag.name === "Tonte" || tag.name === "Taille" || tag.name === "Massif" || tag.name === "Jardinière / Bac à fleurs" ? (
-              <div key={tag._id} className={styles.tags}>
+              <div key={tag.id} className={styles.tags}>
                 <h2 className={styles.tagsTitle} onClick={() => toggle(index)}>
                   {/* {tag.name === "Jardin" ? <MdNaturePeople /> : ''} */}
                   {tag.name === "Tonte" ? <GiGrass /> : ''}

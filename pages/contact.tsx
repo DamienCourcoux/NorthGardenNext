@@ -1,24 +1,24 @@
 import styles from '../styles/Contact.module.css';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import NavLink from '../components/navlink';
+// import NavLink from '../components/navlink';
 import Layout from '../components/layout';
 import LayoutPage from '../components/layoutPage';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import CountUp from 'react-countup';
-import Loader from '../components/Loader/loader';
-import { useQuery } from 'react-query';
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import CountUp from 'react-countup';
+// import Loader from '../components/Loader/loader';
+// import { useQuery } from 'react-query';
 
-import {
-  createHandleChange, createHandleChangeInt, createHandleChangeText, createHandleChangeDetails, sendEmailSuccess
-} from '../redux/reducer/reducer';
-import { getPacks, getPack } from '../lib/requestApiPacks';
-import { getPrestations } from '../lib/requestApiPrestations';
-import { getFormules } from '../lib/requestApiFormules';
-import { addClient, /*sendEmail*/ } from '../lib/requestApiClients';
+// import {
+//   createHandleChange, createHandleChangeInt, createHandleChangeText, createHandleChangeDetails, sendEmailSuccess
+// } from '../redux/reducer/reducer';
+// import { getPacks, getPack } from '../lib/requestApiPacks';
+// import { getPrestations } from '../lib/requestApiPrestations';
+// import { getFormules } from '../lib/requestApiFormules';
+// import { addClient, /*sendEmail*/ } from '../lib/requestApiClients';
 
 import {
   FaPhone, FaEnvelope, FaMapMarkerAlt,
@@ -26,163 +26,163 @@ import {
   FaDiscord, FaPaperPlane, FaCheckCircle
 } from 'react-icons/fa';
 
-import Field from '../components/Field/field';
+// import Field from '../components/Field/field';
 
-type Packs = {
-  _id: number;
-  name: string;
-  prestationsId: string;
-  formulesId: string;
-}
+// type Packs = {
+//   _id: number;
+//   name: string;
+//   prestationsId: string;
+//   formulesId: string;
+// }
 
-type Prestations = {
-  _id: string,
-  name: string,
-  description: string,
-  mowing: string,
-  hedgeTrimmer: string,
-  bushPruning: string,
-  weeding: string,
-  brushCutter: string,
-  planting: string,
-  tarpaulin: string,
-  mulching: string,
-  planters: string,
-  aromaticSeasonalFlower: string,
-  soil: string,
-  fertilizer: string,
-  composition: string,
-  brushing: string,
-  washing: string,
-  photo: string,
-  blower: string,
-  pickup: string,
-  gifts: string,
-  example: string,
-  price: number,
-  pack: string,
-}
+// type Prestations = {
+//   _id: string,
+//   name: string,
+//   description: string,
+//   mowing: string,
+//   hedgeTrimmer: string,
+//   bushPruning: string,
+//   weeding: string,
+//   brushCutter: string,
+//   planting: string,
+//   tarpaulin: string,
+//   mulching: string,
+//   planters: string,
+//   aromaticSeasonalFlower: string,
+//   soil: string,
+//   fertilizer: string,
+//   composition: string,
+//   brushing: string,
+//   washing: string,
+//   photo: string,
+//   blower: string,
+//   pickup: string,
+//   gifts: string,
+//   example: string,
+//   price: number,
+//   pack: string,
+// }
 
-type Formules = {
-  _id: string,
-  name: string,
-  description: string,
-  price: number,
-  packs: string,
-}
+// type Formules = {
+//   _id: string,
+//   name: string,
+//   description: string,
+//   price: number,
+//   packs: string,
+// }
 
 
 export default function Contact() {
-  const lastname = useSelector((state: any) => state.app.lastname);
-  const firstname = useSelector((state: any) => state.app.firstname);
-  const email = useSelector((state: any) => state.app.email);
-  const telephone = useSelector((state: any) => state.app.telephone);
-  const city = useSelector((state: any) => state.app.city);
-  const zipCode = useSelector((state: any) => state.app.zipCode);
-  const selectPackForFormContact = useSelector((state: any) => state.app.selectPackForFormContact);
-  const details = useSelector((state: any) => state.app.details);
-  const selectFormuleForFormContact = useSelector((state: any) => state.app.selectFormuleForFormContact);
-  const selectPrestationForFormContact = useSelector((state: any) => state.app.selectPrestationForFormContact);
+  // const lastname = useSelector((state: any) => state.app.lastname);
+  // const firstname = useSelector((state: any) => state.app.firstname);
+  // const email = useSelector((state: any) => state.app.email);
+  // const telephone = useSelector((state: any) => state.app.telephone);
+  // const city = useSelector((state: any) => state.app.city);
+  // const zipCode = useSelector((state: any) => state.app.zipCode);
+  // const selectPackForFormContact = useSelector((state: any) => state.app.selectPackForFormContact);
+  // const details = useSelector((state: any) => state.app.details);
+  // const selectFormuleForFormContact = useSelector((state: any) => state.app.selectFormuleForFormContact);
+  // const selectPrestationForFormContact = useSelector((state: any) => state.app.selectPrestationForFormContact);
 
-  const dispatch = useDispatch();
-  const router = useRouter();
+  // const dispatch = useDispatch();
+  // const router = useRouter();
 
-  const { isLoading: isLoadingPrestations, isError: isErrorPrestations, data: prestations, error: errorPrestations } = useQuery<Prestations[] | any>('prestations', getPrestations);
+  // const { isLoading: isLoadingPrestations, isError: isErrorPrestations, data: prestations, error: errorPrestations } = useQuery<Prestations[] | any>('prestations', getPrestations);
 
-  const { isLoading: isLoadingFormules, isError: isErrorFormules, data: formules, error: errorFormules } = useQuery<Formules[] | any>('formules', getFormules);
+  // const { isLoading: isLoadingFormules, isError: isErrorFormules, data: formules, error: errorFormules } = useQuery<Formules[] | any>('formules', getFormules);
 
-  const { isLoading: isLoadingPacks, isError: isErrorPacks, data: packs, error: errorPacks } = useQuery<Packs[] | any>('packs', getPacks);
+  // const { isLoading: isLoadingPacks, isError: isErrorPacks, data: packs, error: errorPacks } = useQuery<Packs[] | any>('packs', getPacks);
 
-  if (isLoadingPrestations) return <Loader message='Les prestations chargent...' />;
-  if (isErrorPrestations) return <div>J&apos;ai eu une erreur {`${errorPrestations}`}</div>;
+  // if (isLoadingPrestations) return <Loader message='Les prestations chargent...' />;
+  // if (isErrorPrestations) return <div>J&apos;ai eu une erreur {`${errorPrestations}`}</div>;
 
-  if (isLoadingFormules) return <Loader message='Les formules chargent...' />;
-  if (isErrorFormules) return <div>J&apos;ai eu une erreur {`${errorFormules}`}</div>;
+  // if (isLoadingFormules) return <Loader message='Les formules chargent...' />;
+  // if (isErrorFormules) return <div>J&apos;ai eu une erreur {`${errorFormules}`}</div>;
 
-  if (isLoadingPacks) return <Loader message='Les packs chargent...' />;
-  if (isErrorPacks) return <div>J&apos;ai eu une erreur {`${errorPacks}`}</div>;
+  // if (isLoadingPacks) return <Loader message='Les packs chargent...' />;
+  // if (isErrorPacks) return <div>J&apos;ai eu une erreur {`${errorPacks}`}</div>;
 
-  const notify = () => toast.success(<><p>Merci {firstname} de votre confiance !</p> <br /> <p>Votre demande a été envoyée avec succès.</p> <br /> <p>Vous recevrez une réponse dans les plus brefs délais.</p></>, { icon: <FaCheckCircle className='checkToast' /> });
-  const notifyLastnameError = () => toast.error(`Vous n'avez pas écrit votre nom`);
-  const notifyFirstnameError = () => toast.error(`Vous n'avez pas écrit votre prénom`);
-  const notifyEmailError = () => toast.error(`Vous n'avez pas écrit votre email`);
-  const notifyTelephoneError = () => toast.error(`Vous n'avez pas écrit votre numéro de téléphone`);
-  const notifyCityError = () => toast.error(`Vous n'avez pas écrit votre ville`);
-  const notifyZipCodeError = () => toast.error(`Vous n'avez pas écrit votre code postal`);
-  const notifySelectPackError = () => toast.error(`Vous n'avez pas sélectionné le pack qui vous intéresse`);
-  const notifySelectFormuleError = () => toast.error(`Vous n'avez pas sélectionné la formule qui vous intéresse`);
-  const notifySelectPrestationError = () => toast.error(`Vous n'avez pas sélectionné la prestation qui vous intéresse`);
-  const notifyDescriptionError = () => toast.error(`Vous n'avez pas décri votre demande`);
+  // const notify = () => toast.success(<><p>Merci {firstname} de votre confiance !</p> <br /> <p>Votre demande a été envoyée avec succès.</p> <br /> <p>Vous recevrez une réponse dans les plus brefs délais.</p></>, { icon: <FaCheckCircle className='checkToast' /> });
+  // const notifyLastnameError = () => toast.error(`Vous n'avez pas écrit votre nom`);
+  // const notifyFirstnameError = () => toast.error(`Vous n'avez pas écrit votre prénom`);
+  // const notifyEmailError = () => toast.error(`Vous n'avez pas écrit votre email`);
+  // const notifyTelephoneError = () => toast.error(`Vous n'avez pas écrit votre numéro de téléphone`);
+  // const notifyCityError = () => toast.error(`Vous n'avez pas écrit votre ville`);
+  // const notifyZipCodeError = () => toast.error(`Vous n'avez pas écrit votre code postal`);
+  // const notifySelectPackError = () => toast.error(`Vous n'avez pas sélectionné le pack qui vous intéresse`);
+  // const notifySelectFormuleError = () => toast.error(`Vous n'avez pas sélectionné la formule qui vous intéresse`);
+  // const notifySelectPrestationError = () => toast.error(`Vous n'avez pas sélectionné la prestation qui vous intéresse`);
+  // const notifyDescriptionError = () => toast.error(`Vous n'avez pas décri votre demande`);
 
-  const handleChange = (value: any, name: string) => {
-    if (name === 'telephone' && isNaN(value)) return;
-    if (name === 'telephone' && value.length > 10) return;
-    if (name === 'zipCode' && value.length > 5) return;
-    const payload = { name, value }
-    dispatch(createHandleChange(payload));
-  };
+  // const handleChange = (value: any, name: string) => {
+  //   if (name === 'telephone' && isNaN(value)) return;
+  //   if (name === 'telephone' && value.length > 10) return;
+  //   if (name === 'zipCode' && value.length > 5) return;
+  //   const payload = { name, value }
+  //   dispatch(createHandleChange(payload));
+  // };
 
-  const handleChangeInt = (e: any) => {
-    const payload = { name: e.target.name, target: e.target.value, id: e.target.id }
-    dispatch(createHandleChangeInt(payload));
+  // const handleChangeInt = (e: any) => {
+  //   const payload = { name: e.target.name, target: e.target.value, id: e.target.id }
+  //   dispatch(createHandleChangeInt(payload));
 
-  };
+  // };
 
-  const handleChangeText = (e: any) => {
-    const payload = { name: e.target.name, target: e.target.value, id: e.target.id }
-    dispatch(createHandleChangeText(payload));
+  // const handleChangeText = (e: any) => {
+  //   const payload = { name: e.target.name, target: e.target.value, id: e.target.id }
+  //   dispatch(createHandleChangeText(payload));
 
-  };
+  // };
 
-  const handleChangeDetails = (e: any) => {
-    const payload = { name: e.target.name, target: e.target.value}
-    dispatch(createHandleChangeDetails(payload));
+  // const handleChangeDetails = (e: any) => {
+  //   const payload = { name: e.target.name, target: e.target.value}
+  //   dispatch(createHandleChangeDetails(payload));
 
-  };
+  // };
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    if (lastname === '') {
-      notifyLastnameError();
-    } else if (firstname === '') {
-      notifyFirstnameError();
-    } else if (email === '') {
-      notifyEmailError();
-    } else if (telephone === '') {
-      notifyTelephoneError();
-    } else if (city === '') {
-      notifyCityError();
-    } else if (zipCode === '') {
-      notifyZipCodeError();
-    } else if (selectPackForFormContact === '') {
-      notifySelectPackError();
-    } else if (selectPackForFormContact === 'Formule individuelles' && selectFormuleForFormContact === '') {
-      notifySelectFormuleError();
-    } else if (selectPackForFormContact !== 'Formule individuelles' && selectPrestationForFormContact === '') {
-      notifySelectPrestationError();
-    } else if (details === '') {
-      notifyDescriptionError();
-    } else {
-      const desiredService = `Intéressé par le pack : ${selectPackForFormContact}, plus précisément par la ${selectPackForFormContact === 'Formule individuelles' ? `formule : ${selectFormuleForFormContact}` : `prestation : ${selectPrestationForFormContact}`}`;
-      const formData = {
-        lastname,
-        firstname,
-        email,
-        telephone,
-        city,
-        zipCode,
-        desiredService,
-        details
-      }
-      const json = await addClient(formData);
-      // const jsonSendemail = await sendEmail(formData);
-      if (json /*&& jsonSendemail*/) {
-        dispatch(sendEmailSuccess());
-        router.push('/');
-        notify();
-      }
-    }
-  };
+  // const handleSubmit = async (e: any) => {
+  //   e.preventDefault();
+  //   if (lastname === '') {
+  //     notifyLastnameError();
+  //   } else if (firstname === '') {
+  //     notifyFirstnameError();
+  //   } else if (email === '') {
+  //     notifyEmailError();
+  //   } else if (telephone === '') {
+  //     notifyTelephoneError();
+  //   } else if (city === '') {
+  //     notifyCityError();
+  //   } else if (zipCode === '') {
+  //     notifyZipCodeError();
+  //   } else if (selectPackForFormContact === '') {
+  //     notifySelectPackError();
+  //   } else if (selectPackForFormContact === 'Formule individuelles' && selectFormuleForFormContact === '') {
+  //     notifySelectFormuleError();
+  //   } else if (selectPackForFormContact !== 'Formule individuelles' && selectPrestationForFormContact === '') {
+  //     notifySelectPrestationError();
+  //   } else if (details === '') {
+  //     notifyDescriptionError();
+  //   } else {
+  //     const desiredService = `Intéressé par le pack : ${selectPackForFormContact}, plus précisément par la ${selectPackForFormContact === 'Formule individuelles' ? `formule : ${selectFormuleForFormContact}` : `prestation : ${selectPrestationForFormContact}`}`;
+  //     const formData = {
+  //       lastname,
+  //       firstname,
+  //       email,
+  //       telephone,
+  //       city,
+  //       zipCode,
+  //       desiredService,
+  //       details
+  //     }
+  //     const json = await addClient(formData);
+  //     // const jsonSendemail = await sendEmail(formData);
+  //     if (json /*&& jsonSendemail*/) {
+  //       dispatch(sendEmailSuccess());
+  //       router.push('/');
+  //       notify();
+  //     }
+  //   }
+  // };
 
   return (
     <Layout>
@@ -194,7 +194,7 @@ export default function Contact() {
           <div className={styles.information}>
             <div className={styles.informationTop}>
               <h2 className={`${styles.informationTopTitle} northgarden`}>Mes Coordonnées</h2>
-              <p className={styles.informationTopSubtitle}>Remplissez le formulaire et je vous répondrai au plus vite</p>
+              {/* <p className={styles.informationTopSubtitle}>Remplissez le formulaire et je vous répondrai au plus vite</p> */}
               <ul>
                 <li><a href="tel:07 49 67 97 47" title="07 49 67 97 47"><FaPhone />07 49 67 97 47</a></li>
                 <li><a href="mailto:north.garden.paysage@gmail.com" title="north.garden.paysage@gmail.com"><FaEnvelope />north.garden.paysage@gmail.com</a></li>
@@ -207,7 +207,7 @@ export default function Contact() {
                 <li className='reseauxListItem'><a href="https://discord.gg/cnDY943mEZ" target="_blank" rel="noopener noreferrer" className="discord" title='Discord'><FaDiscord /></a></li>
               </ul>
             </div>
-            {
+            {/* {
               selectPackForFormContact && (
                 <div className={styles.informationBottom}>
                   <article className={styles.ticket}>
@@ -247,9 +247,9 @@ export default function Contact() {
                   </article>
                 </div>
               )
-            }
+            } */}
           </div>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          {/* <form className={styles.form} onSubmit={handleSubmit}>
             <Field type="text" name="lastname" value={lastname} onChange={handleChange} />
             <Field type="text" name="firstname" value={firstname} onChange={handleChange} />
             <Field type="email" name="email" value={email} onChange={handleChange} />
@@ -309,7 +309,7 @@ export default function Contact() {
                 </>
               )
             }
-          </form>
+          </form> */}
         </div>
       </LayoutPage>
     </Layout>

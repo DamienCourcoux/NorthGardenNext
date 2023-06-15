@@ -2,10 +2,11 @@ import styles from '../styles/Formules.module.css';
 import NavLink from "../components/navlink";
 import Image from 'next/image';
 import CountUp from 'react-countup';
-import Loader from '../components/Loader/loader';
-import { useQuery } from 'react-query';
+// import Loader from '../components/Loader/loader';
+// import { useQuery } from 'react-query';
 
-import { getFormules } from '../lib/requestApiFormules';
+// import { getFormules } from '../lib/requestApiFormules';
+import { packs } from '../lib/seed';
 
 import PetitBonhommeSolo from '../public/petitBonhommeSolo.png';
 
@@ -14,19 +15,19 @@ import { GiGrass, GiShears, GiGloves, GiFragrance, GiFlowerPot, GiSpinningBlades
 import { FaSeedling, FaCarrot, FaWind, FaSnowplow, FaRegSnowflake } from 'react-icons/fa';
 import { VscTrash } from 'react-icons/vsc';
 
-type Formule = {
-    _id: string,
-    name: string,
-    description: string,
-    price: number,
-    packs: string,
-}
+// type Formule = {
+//     _id: string,
+//     name: string,
+//     description: string,
+//     price: number,
+//     packs: string,
+// }
 
 export default function Formules() {
-    const { isLoading, isError, data, error } = useQuery<Formule[] | any>('formules', getFormules);
+    // const { isLoading, isError, data, error } = useQuery<Formule[] | any>('formules', getFormules);
 
-    if (isLoading) return <Loader message='Les formules chargent...' />;
-    if (isError) return <div>J&apos;ai eu une erreur {`${error}`}</div>;
+    // if (isLoading) return <Loader message='Les formules chargent...' />;
+    // if (isError) return <div>J&apos;ai eu une erreur {`${error}`}</div>;
 
     return (
         <table className={styles.table}>
@@ -38,32 +39,34 @@ export default function Formules() {
                     <th className={styles.th}>Contact</th>
                 </tr>
                 {
-                    data.map((formule: Formule) => (
-                        <tr className={styles.tr} key={formule._id}>
-                            <td className={`${styles.td} ${styles.icon}`}>
-                                {formule.name === "Tonte" ? <GiGrass /> : ''}
-                                {formule.name === "Taille" ? <GiShears /> : ''}
-                                {formule.name === "Désherbage" ? <GiGloves /> : ''}
-                                {formule.name === "Massif" ? <><MdLocalFlorist /> <GiFragrance /></> : ''}
-                                {formule.name === "Plantation" ? <FaSeedling /> : ''}
-                                {formule.name === "Jardinières fleurie" ? <GiFlowerPot /> : ''}
-                                {formule.name === "Jardinières potagère" ? <FaCarrot /> : ''}
-                                {formule.name === "Débroussaillage" ? <GiSpinningBlades /> : ''}
-                                {formule.name === "Souffleur" ? <FaWind /> : ''}
-                                {formule.name === "Ramassage" ? <><VscTrash /> <GiLeafSwirl /></> : ''}
-                                {formule.name === "Bois" ? <GiWoodPile /> : ''}
-                                {formule.name === "Arrosage" ? <><GiWateringCan /> <GiPlantWatering /></> : ''}
-                                {formule.name === "Déneigeage" ? <><FaSnowplow /> <FaRegSnowflake /></> : ''}
-                                {formule.name === "Massif" || formule.name === "Plantation" || formule.name === "Jardinières" ? <>{formule.name}<span className={styles.asterix}>*</span></> : formule.name}
-                            </td>
-                            <td className={styles.td}>{formule.description}</td>
-                            <td className={`${styles.td} ${styles.formulePrice}`}>
-                                <CountUp end={formule.price} suffix=" €" />
-                            </td>
-                            <td className={styles.td}>
-                                <NavLink className={styles.btnMecontacter} href="/contact" title="Me contacter">Me contacter</NavLink>
-                            </td>
-                        </tr>
+                    packs.map((pack) => (
+                        pack.formules.map((formule) => (
+                            <tr className={styles.tr} key={formule.id}>
+                                <td className={`${styles.td} ${styles.icon}`}>
+                                    {formule.name === "Tonte" ? <GiGrass /> : ''}
+                                    {formule.name === "Taille" ? <GiShears /> : ''}
+                                    {formule.name === "Désherbage" ? <GiGloves /> : ''}
+                                    {formule.name === "Massif" ? <><MdLocalFlorist /> <GiFragrance /></> : ''}
+                                    {formule.name === "Plantation" ? <FaSeedling /> : ''}
+                                    {formule.name === "Jardinières fleurie" ? <GiFlowerPot /> : ''}
+                                    {formule.name === "Jardinières potagère" ? <FaCarrot /> : ''}
+                                    {formule.name === "Débroussaillage" ? <GiSpinningBlades /> : ''}
+                                    {formule.name === "Souffleur" ? <FaWind /> : ''}
+                                    {formule.name === "Ramassage" ? <><VscTrash /> <GiLeafSwirl /></> : ''}
+                                    {formule.name === "Bois" ? <GiWoodPile /> : ''}
+                                    {formule.name === "Arrosage" ? <><GiWateringCan /> <GiPlantWatering /></> : ''}
+                                    {formule.name === "Déneigeage" ? <><FaSnowplow /> <FaRegSnowflake /></> : ''}
+                                    {formule.name === "Massif" || formule.name === "Plantation" || formule.name === "Jardinières" ? <>{formule.name}<span className={styles.asterix}>*</span></> : formule.name}
+                                </td>
+                                <td className={styles.td}>{formule.description}</td>
+                                <td className={`${styles.td} ${styles.formulePrice}`}>
+                                    <CountUp end={formule.price} suffix=" €" />
+                                </td>
+                                <td className={styles.td}>
+                                    <NavLink className={styles.btnMecontacter} href="/contact" title="Me contacter">Me contacter</NavLink>
+                                </td>
+                            </tr>
+                        ))
                     ))
                 }
                 <tr className={`${styles.tr} ${styles.textasterix}`}>

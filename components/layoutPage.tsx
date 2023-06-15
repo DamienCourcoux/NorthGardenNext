@@ -10,18 +10,18 @@ type Props = {
 
 export default function LayoutPage({ children, title, startProject, error }: Props) {
     return (
-        <section className={styles.container}>
+        <section className={title === 'home' ? '' : styles.container}>
             {
                 startProject
-                    ? <h1 className={`${styles.title} northgarden`}>{title === '404' ? '' : title}</h1>
+                    ? <h1 className={title === 'home' ? styles.home : `${styles.title} northgarden`}>{title === '404' || title === 'home' ? '' : title}</h1>
                     : (
 
                         <div className={styles.contactHead}>
                             <h1 className={`${styles.contactTitle} northgarden`}>Me Contacter</h1>
-                            <p className={styles.contactSubtitle}>
+                            {/* <p className={styles.contactSubtitle}>
                                 <span className={styles.contactSubtitleLeft}>Des questions ?</span>
                                 <span className={styles.contactSubtitleRight}>Ecrivez-moi un message !</span>
-                            </p>
+                            </p> */}
                         </div>
                     )
             }
